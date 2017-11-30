@@ -1,0 +1,117 @@
+@import "mixins";
+@import "vars";
+
+*, *:after, *:before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+a, button {
+	cursor: pointer;
+}
+
+a {
+	color: @link-color;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 36px;
+	margin-bottom: 5px;
+}
+
+body {
+	font: 16px @main-font;
+	color: @primary;
+	line-height: 1.4;
+	letter-spacing: 0.07px;
+}
+
+input, textarea, select, button, label {
+	vertical-align: middle;
+	font: 14px/20px "Montserrat", sans-serif;
+	border-radius: 0;
+	outline: none;
+
+	// fix button height in FF http://stackoverflow.com/questions/8859908/buttons-too-tall-on-firefox
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
+::selection {
+	color: #fff;
+	background: @primary;
+}
+
+::-moz-selection {
+	color: #fff;
+	background: @primary;
+}
+
+.heading {
+	font-size: 48px;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 20px 0 80px;
+
+	@media (max-width: @mobile-max) {
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+.subheading {
+	font-size: 36px;
+	font-weight: 300;
+}
+
+.font-primary {
+	color: @primary;
+}
+
+.columns {
+	margin: 10px -@desktop-wrap 0;
+    display: flex;
+    @media (max-width: @mobile-max) {
+        display: block;
+        &.description {
+            margin: 10px -@mobile-wrap 0;
+            display: flex;
+        }
+    }
+}
+
+.column {
+    margin: 30px @desktop-wrap 0 @desktop-wrap;
+    flex: 1;
+    @media (max-width: @mobile-max) {
+        margin: 30px @mobile-wrap 0 @mobile-wrap;
+    }
+}
+
+.container {
+	width: calc(100% - 60px);
+	max-width: 760px;
+	margin: 0 auto;
+
+	@media (max-width: @mobile-max) {
+		width: calc(100% - 40px);
+	}
+
+	.clearfix();
+}
+
+.mobile-hidden {
+	@media (max-width: @mobile-max) {
+		display: none;
+	}
+}
+
+.desktop-hidden {
+	@media (min-width: (@mobile-max + 1)) {
+		display: none;
+	}
+}

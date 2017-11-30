@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{{page.title}}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,800" rel="stylesheet">
+		<link href="/css/style.css?{{commit_hash}}" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+	</head>
+
+	<body>
+		<a href="/" class="error-logo">
+			<img src="/img/logo.png" height="38" width="273">
+		</a>
+
+		{{>body}}
+
+		<div class="navbar navbar-error">
+			<a class="go-home" href="/">Go to homepage</a>
+		</div>
+
+	</body>
+</html>
