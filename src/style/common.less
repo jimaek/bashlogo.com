@@ -93,12 +93,11 @@ input, textarea, select, button, label {
 }
 
 .container {
-	width: calc(100% - 60px);
-	max-width: 760px;
+	width: 760px;
 	margin: 0 auto;
-
 	@media (max-width: @mobile-max) {
-		width: calc(100% - 40px);
+		width: auto;
+		margin: 0 @desktop-wrap;
 	}
 
 	.clearfix();
